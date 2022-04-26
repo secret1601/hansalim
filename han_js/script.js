@@ -268,7 +268,7 @@ window.onload = function(){
     // Popular의 출력을 위한 데이터
     // HTTP Request : 서버에 자료를 요청하는 것
     // HTTP Response : 서버에서 응답하는 것
-    fetch('../data.json')
+    fetch('https://secret1601.github.io/hansalim/data.json')
     .then(res => res.json())
     .then(result => {
         for(let i = 0; i< result.length; i++) {
