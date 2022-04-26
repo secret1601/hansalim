@@ -259,6 +259,731 @@ window.onload = function(){
         event.preventDefault();
     });
 
+    // Popular의 출력을 위한 데이터
+    let popular_data_1 = [ 
+    {
+        title: '1 백미/유(4kg)',
+        price: '17,900',
+        img: 'good.jpg',
+        cate: '유기농',
+        link: '#',
+        buy: '#',
+        id: 1,
+        tag: '인기',
+        type: 1
+    },
+    {
+        title: '2 백미/유(4kg)',
+        price: '17,900',
+        img: 'good.jpg',
+        cate: '유기농',
+        link: '#',
+        buy: '#',
+        id: 2,
+        tag: '알뜰',
+        type: 2
+    },
+    {
+        title: '3 백미/유(4kg)',
+        price: '17,900',
+        img: 'good.jpg',
+        cate: '유기농',
+        link: '#',
+        buy: '#',
+        id: 3,
+        tag: '',
+        type: 0
+    },
+    {
+        title: '4 백미/유(4kg)',
+        price: '17,900',
+        img: 'good.jpg',
+        cate: '유기농',
+        link: '#',
+        buy: '#',
+        id: 4,
+        tag: '인기',
+        type: 1
+    }
+];
+    let popular_data_2 = [
+        {
+            title: '2-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '2-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '2-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '2-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_3 = [
+        {
+            title: '3-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '3-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '3-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '3-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_4 = [
+        {
+            title: '4-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '4-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '4-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '4-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_5 = [
+        {
+            title: '5-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '5-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '5-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '5-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_6 = [
+        {
+            title: '6-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '6-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '6-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '6-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_7 = [
+        {
+            title: '7-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '7-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '7-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '7-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_8 = [
+        {
+            title: '8-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '8-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '8-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '8-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_9 = [
+        {
+            title: '9-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '9-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '9-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '9-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_10 = [
+        {
+            title: '10-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '10-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '10-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '10-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_11= [
+        {
+            title: '11-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '11-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '11-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '11-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_12 = [
+        {
+            title: '12-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '12-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '12-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '12-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_13 = [
+        {
+            title: '13-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '13-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '13-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '13-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_14 = [
+        {
+            title: '14-1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
+        {
+            title: '14-2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '14-3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '14-4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+
+    // Popular 버튼 클릭시 실행
+    let p_tab = $('.popular-slide .swiper-slide a');
+
+    // 내용이 나올 장소
+    let p_bottom = $('.popular-bottom')
+
+    // p_tab을 클릭할때 p_change 구현하기
+    let data_arr = [
+        popular_data_1,
+        popular_data_2,
+        popular_data_3,
+        popular_data_4,
+        popular_data_5,
+        popular_data_6,
+        popular_data_7,
+        popular_data_8,
+        popular_data_9,
+        popular_data_10,
+        popular_data_11,
+        popular_data_12,
+        popular_data_13,
+        popular_data_14,
+    ]
+    $.each(p_tab, function(index, item){
+        $(this).click(function(e){
+            e.preventDefault();
+            p_change(data_arr[index]);
+            
+            p_tab.removeClass('popular-bt-focus');
+            p_tab.eq(index).addClass('popular-bt-focus');
+        });
+    });
+
+    // 내용 갱신
+    p_change(popular_data_1);
+    function p_change(_arr){
+        // 최종 a태그 html을 저장하는 용도
+        let temp = '';
+        for(let i=0; i<_arr.length; i++){
+            // 배열안에 있는 데이터를 1개씩 참조한다.
+            let data = _arr[i];
+
+            temp +=  
+            `<a href="${data.link}" class="good-link">
+                <span class="good-img">
+                    <img src="./han_images/${data.img}" alt="제품">
+                </span>
+
+                <div class="good-info">
+                    <span class="good-cate">
+                        <em class="good-cate-txt">${data.cate}</em>
+                    </span>
+                    <span class="good-title">
+                        ${data.title}
+                    </span>
+                    <span class="good-price">
+                        ${data.price}
+                    </span>
+                </div>`;
+
+            // data.type에 따라서 모양이 달라진다.
+            if(data.type == 0) {
+
+            } else if (data.type == 1) {
+                temp += `<span class="good-tag">${data.tag}</span>`;
+            } else if (data.type == 2) {
+                temp += `<span class="good-tag good-tag-red">${data.tag}</span>`;
+            }
+
+            temp += `<button class="good-cart"></button></a>`;
+
+        }
+
+        p_bottom.html(temp);
+        p_bottom.find('a:first-child').css('margin-left', 0);
+    }
+
+
+
     // 브랜드관 슬라이드
     new Swiper('.sw-brand-slide',{
         slidesPerView:3,
