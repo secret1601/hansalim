@@ -259,7 +259,30 @@ window.onload = function(){
         event.preventDefault();
     });
 
+    // 카테고리별 데이터
+    let data_arr = []
+
+    // 타이틀 데이터
+    let data_title = []
+
     // Popular의 출력을 위한 데이터
+    // HTTP Request : 서버에 자료를 요청하는 것
+    // HTTP Response : 서버에서 응답하는 것
+    fetch('../data.json')
+    .then(res => res.json())
+    .then(result => {
+        for(let i = 0; i< result.length; i++) {
+            let data = result[i];
+            data_title[i] = data.title;
+            data_arr[i] = data.arr;
+        }
+        // 비동기로 데이터를 가져오기 때문에 정리가 끝나면 목록 출력
+        p_change(data_arr[0]);
+        $('.section-bt').text(`${data_title[0]} 더보기`);
+    });
+    
+
+
     let popular_data_1 = [ 
     {
         title: '1 백미/유(4kg)',
@@ -896,7 +919,7 @@ window.onload = function(){
             title: '14-4 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
-            cate: '유기농',
+            cate: '',
             link: '#',
             buy: '#',
             id: 4,
@@ -912,22 +935,7 @@ window.onload = function(){
     let p_bottom = $('.popular-bottom')
 
     // p_tab을 클릭할때 p_change 구현하기
-    let data_arr = [
-        popular_data_1,
-        popular_data_2,
-        popular_data_3,
-        popular_data_4,
-        popular_data_5,
-        popular_data_6,
-        popular_data_7,
-        popular_data_8,
-        popular_data_9,
-        popular_data_10,
-        popular_data_11,
-        popular_data_12,
-        popular_data_13,
-        popular_data_14,
-    ]
+    
     $.each(p_tab, function(index, item){
         $(this).click(function(e){
             e.preventDefault();
@@ -935,11 +943,14 @@ window.onload = function(){
             
             p_tab.removeClass('popular-bt-focus');
             p_tab.eq(index).addClass('popular-bt-focus');
+
+            let temp = data_title[index];
+            $('.section-bt').text(`${temp} 더보기`);
         });
     });
 
+
     // 내용 갱신
-    p_change(popular_data_1);
     function p_change(_arr){
         // 최종 a태그 html을 저장하는 용도
         let temp = '';
@@ -953,16 +964,23 @@ window.onload = function(){
                     <img src="./han_images/${data.img}" alt="제품">
                 </span>
 
-                <div class="good-info">
-                    <span class="good-cate">
-                        <em class="good-cate-txt">${data.cate}</em>
-                    </span>
-                    <span class="good-title">
-                        ${data.title}
-                    </span>
-                    <span class="good-price">
-                        ${data.price}
-                    </span>
+                <div class="good-info">`;
+
+
+                // cate가 있으면
+                if(data.cate != '') {
+                    temp += `<span class="good-cate">
+                    <em class="good-cate-txt">${data.cate}</em>
+                    </span>`;
+                }
+                
+
+                temp += `<span class="good-title">
+                    ${data.title}
+                </span>
+                <span class="good-price">
+                    ${data.price}
+                </span>
                 </div>`;
 
             // data.type에 따라서 모양이 달라진다.
