@@ -1,24 +1,24 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     // 전체 메뉴 관련
-    
+
 
     let all_menu = $('.all-menu');
-    let all_list_cate_li = $('.all-list-cate > li');   
+    let all_list_cate_li = $('.all-list-cate > li');
     let all_menu_detail_list = $('.all-menu-detail-list');
     let all_menu_timer;
     let all_menu_timer_delay = 100;
 
-    $.each(all_list_cate_li, function(index, item){
+    $.each(all_list_cate_li, function (index, item) {
 
-        $(this).mouseenter(function(){            
+        $(this).mouseenter(function () {
             clearTimeout(all_menu_timer);
             all_menu.addClass('all-menu-active');
             all_menu_detail_list.hide();
             all_menu_detail_list.eq(index).show();
         });
 
-        $(this).mouseleave(function(){
+        $(this).mouseleave(function () {
             clearTimeout(all_menu_timer);
             all_menu_timer = setTimeout(allMenuHide, all_menu_timer_delay);
         });
@@ -29,12 +29,12 @@ $(document).ready(function(){
     let all_menu_detail = $('.all-menu-detail');
 
     // 상세 메뉴 영역 div 에 롤오버를 하면 사라지려는 타이머를 지운다.
-    all_menu_detail.mouseenter(function(){
+    all_menu_detail.mouseenter(function () {
         clearTimeout(all_menu_timer);
     });
 
     // 상세 메뉴 영역 div 에서 롤 아웃을 하면 조금 기다렸다가 사라지는 타이머 생성
-    all_menu_detail.mouseleave(function(){
+    all_menu_detail.mouseleave(function () {
         clearTimeout(all_menu_timer);
 
         // 타이머 생성방법 setTimeout(할일, 대기시간)
@@ -42,7 +42,7 @@ $(document).ready(function(){
     });
 
     // 상세 메뉴 사라지기
-    function allMenuHide(){
+    function allMenuHide() {
         clearTimeout(all_menu_timer);
         all_menu.removeClass('all-menu-active');
     }
@@ -52,26 +52,26 @@ $(document).ready(function(){
     let all_timer;
     let all_timer_delay = 100;
 
-    all.mouseenter(function(){
+    all.mouseenter(function () {
         clearTimeout(all_timer);
         all_menu.css('visibility', 'visible');
     });
 
-    all.mouseleave(function(){
+    all.mouseleave(function () {
         clearTimeout(all_timer);
         all_timer = setTimeout(hideMenu, all_timer_delay);
     });
 
-    all_menu.mouseenter(function(){
+    all_menu.mouseenter(function () {
         clearTimeout(all_timer);
     });
-    
-    all_menu.mouseleave(function(){
+
+    all_menu.mouseleave(function () {
         clearTimeout(all_timer);
         all_timer = setTimeout(hideMenu, all_timer_delay);
     });
 
-    function hideMenu(){
+    function hideMenu() {
         all_menu.css('visibility', 'hidden');
     }
     // 전체메뉴의 높이는 웹브라우저의 높이를 기준으로 설정
@@ -82,7 +82,7 @@ $(document).ready(function(){
     let modal = $('.modal');
     let modal_close = $('.modal-close');
 
-    modal_close.click(function(){
+    modal_close.click(function () {
         modal.fadeOut(500);
     });
 
@@ -90,7 +90,7 @@ $(document).ready(function(){
     let login_menu = $('#login-menu');
     let arrow_list_login = $('.arrow-list-login');
 
-    login_menu.click(function(event){
+    login_menu.click(function (event) {
         event.preventDefault();
         arrow_list_login.toggle();
     })
@@ -99,7 +99,7 @@ $(document).ready(function(){
     let arrow = $('#arrow');
     let arrow_list_event = $('.arrow-list-event');
 
-    arrow.click(function(e){
+    arrow.click(function (e) {
         e.preventDefault();
         arrow_list_event.toggle();
 
@@ -115,7 +115,7 @@ $(document).ready(function(){
     let more = $('#more');
     let arrow_list_more = $('.arrow-list-more');
 
-    more.click(function(e){
+    more.click(function (e) {
         e.preventDefault();
         arrow_list_more.toggle();
 
@@ -129,20 +129,20 @@ $(document).ready(function(){
 
         more.toggleClass('arrow-list-more-active');
         arrow.removeClass('arrow-list-event-active');
-        
+
         arrow_list_event.hide();
     })
 
     // 펼침기능
     let link_list = $('.link-list');
     let link_bt = $('.link-bt');
-    link_bt.click(function(){
+    link_bt.click(function () {
         link_list.stop().slideToggle(300);
     });
 
     // 위로가기 기능
     let gotop = $('.gotop');
-    gotop.click(function(){
+    gotop.click(function () {
         $('html, body').stop().animate({
             scrollTop: 0
         }, 500);
@@ -151,10 +151,10 @@ $(document).ready(function(){
     // 위로가기 사라짐 효과
     let header_main = $('.header-main');
 
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         // 스크롤 바가 이동한 거리 체크
         let sc = $(window).scrollTop();
-        if(sc >= 68) {
+        if (sc >= 68) {
             header_main.addClass('header-main-active');
             $('.contents').css('padding-top', 53);
             $('.contents').animate({
@@ -169,7 +169,7 @@ $(document).ready(function(){
 
 });
 
-window.onload = function(){
+window.onload = function () {
     // 상단 슬라이드
     let sw_visual = new Swiper('.sw-visual', {
         autoplay: {
@@ -190,9 +190,9 @@ window.onload = function(){
     });
 
     let sw_visual_pause = $('.sw-visual-pause');
-    sw_visual_pause.click(function(){
+    sw_visual_pause.click(function () {
         let temp = $(this).hasClass('sw-visual-pause-active')
-        if(temp != true) {
+        if (temp != true) {
             // 적용이 안되었다. 그래서 적용
             $(this).addClass('sw-visual-pause-active')
             sw_visual.autoplay.stop();
@@ -204,24 +204,24 @@ window.onload = function(){
     });
 
     // 알뜰상품 슬라이드
-    new Swiper('.sw-sale',{
+    new Swiper('.sw-sale', {
         slidesPerView: 3,
         spaceBetween: 15,
         // loop: true,
-        slidesPerGroup:3,
+        slidesPerGroup: 3,
 
         navigation: {
-            nextEl:'.sw-sale-next',
-            prevEl:'.sw-sale-prev',
+            nextEl: '.sw-sale-next',
+            prevEl: '.sw-sale-prev',
         },
         pagination: {
-            el:'.sw-sale-pg',
+            el: '.sw-sale-pg',
             type: 'fraction',
         }
     });
 
     // 조합원 슬라이드
-    new Swiper('.sw-copartner',{
+    new Swiper('.sw-copartner', {
         slidesPerView: 3,
         slidesPerGroup: 3,
         // spaceBetween: 15,gm
@@ -239,7 +239,7 @@ window.onload = function(){
 
     // 인기물품 슬라이드
 
-    new Swiper('.popular-slide',{
+    new Swiper('.popular-slide', {
         slidesPerView: 7,
         slidesPerGroup: 7,
 
@@ -252,10 +252,10 @@ window.onload = function(){
     let popular_slide_prev = $('.popular-slide-prev');
     let popular_slide_next = $('.popular-slide-next');
 
-    popular_slide_prev.click(function(event){
+    popular_slide_prev.click(function (event) {
         event.preventDefault();
     });
-    popular_slide_next.click(function(event){
+    popular_slide_next.click(function (event) {
         event.preventDefault();
     });
 
@@ -268,69 +268,67 @@ window.onload = function(){
     // Popular의 출력을 위한 데이터
     // HTTP Request : 서버에 자료를 요청하는 것
     // HTTP Response : 서버에서 응답하는 것
-    fetch('https://secret1601.github.io/data.json')
-    .then(res => res.json())
-    .then(result => {
-        for(let i = 0; i< result.length; i++) {
-            let data = result[i];
-            data_title[i] = data.title;
-            data_arr[i] = data.arr;
-        }
-        // 비동기로 데이터를 가져오기 때문에 정리가 끝나면 목록 출력
-        p_change(data_arr[0]);
-        $('.section-bt').text(`${data_title[0]} 더보기`);
-    });
-    
+    fetch('https://secret1601.github.io/hansalim/data.json')
+        .then(res => res.json())
+        .then(result => {
+            for (let i = 0; i < result.length; i++) {
+                let data = result[i];
+                data_title[i] = data.title;
+                data_arr[i] = data.arr;
+            }
+            // 비동기로 데이터를 가져오기 때문에 정리가 끝나면 목록 출력
+            p_change(data_arr[0]);
+            $('.section-bt').text(`${data_title[0]} 더보기`);
+        });
 
 
-    let popular_data_1 = [ 
-    {
-        title: '1 백미/유(4kg)',
-        price: '17,900',
-        img: 'good.jpg',
-        cate: '유기농',
-        link: '#',
-        buy: '#',
-        id: 1,
-        tag: '인기',
-        type: 1
-    },
-    {
-        title: '2 백미/유(4kg)',
-        price: '17,900',
-        img: 'good.jpg',
-        cate: '유기농',
-        link: '#',
-        buy: '#',
-        id: 2,
-        tag: '알뜰',
-        type: 2
-    },
-    {
-        title: '3 백미/유(4kg)',
-        price: '17,900',
-        img: 'good.jpg',
-        cate: '유기농',
-        link: '#',
-        buy: '#',
-        id: 3,
-        tag: '',
-        type: 0
-    },
-    {
-        title: '4 백미/유(4kg)',
-        price: '17,900',
-        img: 'good.jpg',
-        cate: '유기농',
-        link: '#',
-        buy: '#',
-        id: 4,
-        tag: '인기',
-        type: 1
-    }
-];
-    let popular_data_2 = [
+
+    let popular_data_1 = [{
+            title: '1 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 1,
+            tag: '인기',
+            type: 1
+        },
         {
+            title: '2 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 2,
+            tag: '알뜰',
+            type: 2
+        },
+        {
+            title: '3 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 3,
+            tag: '',
+            type: 0
+        },
+        {
+            title: '4 백미/유(4kg)',
+            price: '17,900',
+            img: 'good.jpg',
+            cate: '유기농',
+            link: '#',
+            buy: '#',
+            id: 4,
+            tag: '인기',
+            type: 1
+        }
+    ];
+    let popular_data_2 = [{
             title: '2-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -375,8 +373,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_3 = [
-        {
+    let popular_data_3 = [{
             title: '3-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -421,8 +418,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_4 = [
-        {
+    let popular_data_4 = [{
             title: '4-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -467,8 +463,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_5 = [
-        {
+    let popular_data_5 = [{
             title: '5-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -513,8 +508,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_6 = [
-        {
+    let popular_data_6 = [{
             title: '6-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -559,8 +553,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_7 = [
-        {
+    let popular_data_7 = [{
             title: '7-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -605,8 +598,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_8 = [
-        {
+    let popular_data_8 = [{
             title: '8-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -651,8 +643,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_9 = [
-        {
+    let popular_data_9 = [{
             title: '9-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -697,8 +688,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_10 = [
-        {
+    let popular_data_10 = [{
             title: '10-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -743,8 +733,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_11= [
-        {
+    let popular_data_11 = [{
             title: '11-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -789,8 +778,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_12 = [
-        {
+    let popular_data_12 = [{
             title: '12-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -835,8 +823,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_13 = [
-        {
+    let popular_data_13 = [{
             title: '13-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -881,8 +868,7 @@ window.onload = function(){
             type: 1
         }
     ];
-    let popular_data_14 = [
-        {
+    let popular_data_14 = [{
             title: '14-1 백미/유(4kg)',
             price: '17,900',
             img: 'good.jpg',
@@ -935,12 +921,12 @@ window.onload = function(){
     let p_bottom = $('.popular-bottom')
 
     // p_tab을 클릭할때 p_change 구현하기
-    
-    $.each(p_tab, function(index, item){
-        $(this).click(function(e){
+
+    $.each(p_tab, function (index, item) {
+        $(this).click(function (e) {
             e.preventDefault();
             p_change(data_arr[index]);
-            
+
             p_tab.removeClass('popular-bt-focus');
             p_tab.eq(index).addClass('popular-bt-focus');
 
@@ -951,15 +937,15 @@ window.onload = function(){
 
 
     // 내용 갱신
-    function p_change(_arr){
+    function p_change(_arr) {
         // 최종 a태그 html을 저장하는 용도
         let temp = '';
-        for(let i=0; i<_arr.length; i++){
+        for (let i = 0; i < _arr.length; i++) {
             // 배열안에 있는 데이터를 1개씩 참조한다.
             let data = _arr[i];
 
-            temp +=  
-            `<a href="${data.link}" class="good-link">
+            temp +=
+                `<a href="${data.link}" class="good-link">
                 <span class="good-img">
                     <img src="./han_images/${data.img}" alt="제품">
                 </span>
@@ -967,15 +953,15 @@ window.onload = function(){
                 <div class="good-info">`;
 
 
-                // cate가 있으면
-                if(data.cate != '') {
-                    temp += `<span class="good-cate">
+            // cate가 있으면
+            if (data.cate != '') {
+                temp += `<span class="good-cate">
                     <em class="good-cate-txt">${data.cate}</em>
                     </span>`;
-                }
-                
+            }
 
-                temp += `<span class="good-title">
+
+            temp += `<span class="good-title">
                     ${data.title}
                 </span>
                 <span class="good-price">
@@ -984,7 +970,7 @@ window.onload = function(){
                 </div>`;
 
             // data.type에 따라서 모양이 달라진다.
-            if(data.type == 0) {
+            if (data.type == 0) {
 
             } else if (data.type == 1) {
                 temp += `<span class="good-tag">${data.tag}</span>`;
@@ -1003,8 +989,8 @@ window.onload = function(){
 
 
     // 브랜드관 슬라이드
-    new Swiper('.sw-brand-slide',{
-        slidesPerView:3,
+    new Swiper('.sw-brand-slide', {
+        slidesPerView: 3,
         spaceBetween: 20,
 
         pagination: {
@@ -1019,9 +1005,9 @@ window.onload = function(){
     });
 
     // 배너 슬라이드
-    new Swiper('.sw-banner',{
-        slidesPerView:2,
-        autoplay : {
+    new Swiper('.sw-banner', {
+        slidesPerView: 2,
+        autoplay: {
             delay: 4000,
             disableOnInteraction: false,
         },
@@ -1032,22 +1018,22 @@ window.onload = function(){
             prevEl: '.banner-prev',
         }
     });
-    
+
     let banner_prev = $('.banner-prev')
     let banner_next = $('.banner-next')
 
-    banner_prev.click(function(event){
+    banner_prev.click(function (event) {
         event.preventDefault();
     });
 
-    banner_next.click(function(event){
+    banner_next.click(function (event) {
         event.preventDefault();
     });
 
     // 이용후기 슬라이드
-    new Swiper('.sw-review',{
-        slidesPerView:3,
-        slidesPerGroup:3,
+    new Swiper('.sw-review', {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
 
         pagination: {
             el: '.sw-review-pg',
@@ -1063,9 +1049,194 @@ window.onload = function(){
     // 문제사항 발생
     let all_menu_wrap = $('.all-menu-wrap');
     all_menu_wrap.niceScroll({
-        cursoropacitymax : 0.3,
+        cursoropacitymax: 0.3,
         cursorwidth: "7px",
         cursorborderradius: "10px",
     });
+
+    // 이용후기 슬라이드
+    // new Swiper('.sw-review', {
+
+    // });
+
+    // 오늘의 요리 관련
+    let cook_arr = [];
+    // cook.json 파일 관련
+    let cook_json = 'cook.json';
+    // cook 자료를 배치할 html 요소
+    let cook_list = $('.cook-list');
+    // cook html 텍스트 
+    let cook_html = '';
+
+    // 체크 버튼 저장
+    let cook_bt;
+    // 전체 선택 버튼 저장
+    let cook_bt_all = $('.cook-total .cook-bt');
+
+    let cook_wrap = $('.cook-wrap');
     
+
+    // 데이터를 불러들여서 파싱(분해) 한다.
+    fetch(cook_json)
+        .then(res => res.json())
+        .then(result => {
+
+            for (let i = 0; i < result.length; i++) {
+                cook_arr[i] = result[i];
+                // 미리 숫자로 변경을 해준다: json 은 문자열로 오기 때문에
+                cook_arr[i].cook_price = parseInt(cook_arr[i].cook_price);
+                // 처음에 데이터를 가지고 오면 모두 선택되었다.
+                cook_arr[i].cook_check = 1;
+            }
+            // 데이터를 화면에 표현한다.
+            // cook_html 을 만들어낸다.
+            for (let i = 0; i < cook_arr.length; i++) {
+                // 각각의 객체 데이터가 잘 추출되는지 확인하고 싶다.
+                // console.log(cook_arr[i]);
+                let temp = cook_arr[i];
+                cook_html += `<li>
+                        <button class="cook-bt"></button>
+                        <a href="${temp.cook_link}" class="cook-good">
+                            <img src="./han_images/${temp.cook_pic}" alt="${temp.cook_name}">
+                            <p class="cook-good-info">
+                                <span class="cook-good-title">${temp.cook_name}${temp.cook_info}</span>
+                                <span class="cook-good-price">
+                                    <b>${temp.cook_price.toLocaleString()}</b>원
+                                </span>
+                            </p>
+                        </a>
+                    </li>`;
+            }
+            // html 로 삽입해 준다.
+            cook_list.html(cook_html);
+            // html 이 존재하므로 아래 변수 셋팅됨
+            cook_bt = cook_list.find('.cook-bt');
+            
+            // 나이스스크롤 배치
+            cook_wrap.niceScroll({
+                cursoropacitymax: 0.3,
+                cursorwidth: "7px",
+                cursorborderradius: "10px",
+            });
+
+            makeCookBt();
+
+            // 전체 가격을 입력해준다.
+            cookCalc();
+        })
+        .catch();
+
+    // 총 계산 값 입력하기
+    // 총 값이 나오는 자리 html 요소
+    let cook_price_total = $('#cook-price-total');
+    // 총 선택된 값을 계산하는 함수 생성 
+
+    // 장바구니 카운팅
+    let bucket_i = $('.bucket i');
+    // 장바구니 담기 버튼
+    let cooK_price_total = $('#cook-price-total');
+    let cook_link = $('.cook-link');
+    let count = 0;
+    // 전체 선택 개수
+    let cook_count = $('#cook-count');
+
+    // 총 선택된 값을 계산하는 함수
+    function cookCalc() {
+        let total = 0;
+        count = 0;
+        for (let i = 0; i < cook_arr.length; i++) {
+            if (cook_arr[i].cook_check == 1) {
+                total += cook_arr[i].cook_price;
+                count++;
+            }
+            
+        }
+        cook_price_total.html(total.toLocaleString());
+
+        // cookAllBt();
+        cook_count.text(count);
+        
+    }
+    cook_link.click(function(event){
+        event.preventDefault();
+        bucket_i.text(count)
+        bucket_i.removeClass('updown-ani');
+        setTimeout(function(){
+            bucket_i.addClass('updown-ani');
+        }, 200);
+    })
+
+    // 체크 기능 만들기
+    function makeCookBt() {
+        $.each(cook_bt, function (index, item) {
+            $(this).click(function (event) {
+                // 이벤트 전달방지
+                event.stopPropagation();
+                cook_arr[index].cook_check *= -1;
+                // 체크버튼 모양 변경
+                $(this).toggleClass('cook-bt-false');
+                // 전체 가격 새로 계산
+                cookCalc();
+                // 전체 선택 버튼 기능
+                cookAllBt();
+            });
+        });
+    }
+    // 전체 선택 버튼 기능
+    // 전체 선택 여부
+    let cook_all_check = 1;
+
+    function cookAllBt() {
+
+        for (let i = 0; i < cook_arr.length; i++) {
+            if (cook_arr[i].cook_check != 1) {
+                // 체크가 해제되었다.
+                cook_all_check = 0;
+                break;
+            } else {
+                cook_all_check = 1;
+            }
+        }
+        if (cook_all_check == 1) {
+            cook_bt_all.removeClass('cook-bt-false');
+        } else {
+            cook_bt_all.addClass('cook-bt-false');
+        }
+    }
+    // 전체 선택 버튼 처리
+    cook_bt_all.click(function (event) {
+        event.stopPropagation();
+        if (cook_all_check == 1) {
+            cook_all_check = 0;
+        } else {
+            cook_all_check = 1;
+        }
+        if (cook_all_check == 1) {
+            for (let i = 0; i < cook_arr.length; i++) {
+                cook_arr[i].cook_check = 1;
+            }
+        } else {
+            for (let i = 0; i < cook_arr.length; i++) {
+                cook_arr[i].cook_check = -1;
+            }
+        }
+
+        $.each(cook_bt, function (index, item) {
+            if (cook_all_check == 1) {
+                $(this).removeClass('cook-bt-false');
+            } else {
+                $(this).addClass('cook-bt-false');
+            }
+        });
+
+        if(cook_all_check == 1) {
+            cook_bt_all.removeClass('cook-bt-false');
+        }else{
+            cook_bt_all.addClass('cook-bt-false');
+        }
+
+        cookCalc();
+
+    });
+
 };
